@@ -3,7 +3,7 @@ public class IsAnagram {
 	static boolean IsAnag(String a, String b) {
 		HashMap<Character, Integer> hmap = new HashMap<Character, Integer>();
 		if (a.length() == b.length()) {
-			// Insert a to hmap.
+			// Insert a to the hmap.
 			for (int i = 0; i < a.length(); i++) {
 				if (!hmap.containsKey(a.charAt(i))) {
 					hmap.put(a.charAt(i), 1);
@@ -11,7 +11,7 @@ public class IsAnagram {
 					hmap.put(a.charAt(i), hmap.get(a.charAt(i)) + 1);
 				}
 			}		
-			// For debug
+			// For debugging.
 			// System.out.println("Before a compared with b");
 			// System.out.println(hmap);
 			// Compare a with b.
@@ -22,10 +22,10 @@ public class IsAnagram {
 					return false;
 				}
 			}
-			// For debug
+			// For debugging.
 			// System.out.println("After a compared with b");
 			// System.out.println(hmap);			
-			// Check if all values are 0		
+			// Check if all values in hmap.values() are 0.		
 			for (Integer i : hmap.values()) {
 				if (i != 0) {
 					return false;
