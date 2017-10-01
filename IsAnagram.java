@@ -4,7 +4,7 @@ public class IsAnagram {
 	
 	static boolean IsAnag(String a, String b) {		
 		if (a.length() == b.length()) {
-			HashMap<Character, Integer> cmap = CharMap(a);
+			Map<Character, Integer> cmap = CharMap(a);
 				
 			// For debugging.
 			// System.out.println("Before a compared with b");
@@ -36,8 +36,8 @@ public class IsAnagram {
 	}
 	
 	// Making a HashMap to record the number of every character of a string.
-	static HashMap<Character, Integer> CharMap(String str) {
-		HashMap<Character, Integer> hmap = new HashMap<Character, Integer>();
+	static Map<Character, Integer> CharMap(String str) {
+		Map<Character, Integer> hmap = new HashMap<Character, Integer>();
 		for (int i = 0; i < str.length(); i++) {
 			if (!hmap.containsKey(str.charAt(i))) {
 				hmap.put(str.charAt(i), 1);
