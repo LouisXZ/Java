@@ -1,32 +1,31 @@
 import java.util.*;
+
 public class IsAnagram {
-	static boolean IsAnag(String a, String b) {
-		HashMap<Character, Integer> hmap = new HashMap<Character, Integer>();
+	
+	static boolean IsAnag(String a, String b) {		
 		if (a.length() == b.length()) {
-			// Inserting a into the hmap.
-			for (int i = 0; i < a.length(); i++) {
-				if (!hmap.containsKey(a.charAt(i))) {
-					hmap.put(a.charAt(i), 1);
-				} else {
-					hmap.put(a.charAt(i), hmap.get(a.charAt(i)) + 1);
-				}
-			}		
+			HashMap<Character, Integer> cmap = CharMap(a);
+				
 			// For debugging.
 			// System.out.println("Before a compared with b");
-			// System.out.println(hmap);
-			// Comparing a with b.
+			// System.out.println(cmap);
+			// If a char (key) of the string b exists in the cmap, 
+			// it will subtract 1 from the corresponding value.
 			for (int i = 0; i < b.length(); i++) {
-				if (hmap.containsKey(b.charAt(i))) {
-					hmap.put(b.charAt(i), hmap.get(b.charAt(i)) - 1);
+				if (cmap.containsKey(b.charAt(i))) {
+					cmap.put(b.charAt(i), cmap.get(b.charAt(i)) - 1);
 				} else { 
 					return false;
 				}
 			}
+			
 			// For debugging.
 			// System.out.println("After a compared with b");
-			// System.out.println(hmap);			
-			// Checking if all values in hmap.values() are 0.		
-			for (Integer i : hmap.values()) {
+			// System.out.println(cmap);			
+			// Checking if all values in cmap.values() are 0.
+			// If all values are 0, 
+			// it will mean the string b is an anagram of the string a.
+			for (Integer i : cmap.values()) {
 				if (i != 0) {
 					return false;
 				}
@@ -35,13 +34,27 @@ public class IsAnagram {
 		}
 		return false;
 	}
+	
+	// Making a HashMap to record the number of every character of a string.
+	static HashMap<Character, Integer> CharMap(String str) {
+		HashMap<Character, Integer> hmap = new HashMap<Character, Integer>();
+		for (int i = 0; i < str.length(); i++) {
+			if (!hmap.containsKey(str.charAt(i))) {
+				hmap.put(str.charAt(i), 1);
+			} else {
+				hmap.put(str.charAt(i), hmap.get(str.charAt(i)) + 1);
+			}
+		}		
+		return hmap;
+	} 
+	
 	public static void main(String[] args) {
-		String a = "apple";
-		String b = "lpaep";
+		String a = "cinema";
+		String b = "iceman";
 		if(IsAnag(a, b)) {
-			System.out.println("a and b are the same!");
+			System.out.println(b + " is an anagram of the " + a + ".");
 		} else {
-			System.out.println("a and b are different!");
+			System.out.println(b + " is not an anagram of the " + a + ".");
 		}
 	}
 }
