@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="data"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="/Users/louis/Workspaces/MyEclipse 2016 CI/AirportMap/lib/core.jar"/>
+	<classpathentry kind="lib" path="/Users/louis/Workspaces/MyEclipse 2016 CI/AirportMap/lib/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="/Users/louis/Workspaces/MyEclipse 2016 CI/AirportMap/lib/jogl-all.jar"/>
+	<classpathentry kind="lib" path="/Users/louis/Workspaces/MyEclipse 2016 CI/AirportMap/lib/json4processing.jar"/>
+	<classpathentry kind="lib" path="/Users/louis/Workspaces/MyEclipse 2016 CI/AirportMap/lib/libTUIO.jar"/>
+	<classpathentry kind="lib" path="/Users/louis/Workspaces/MyEclipse 2016 CI/AirportMap/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="/Users/louis/Workspaces/MyEclipse 2016 CI/AirportMap/lib/sqlite-jdbc-3.7.2.jar"/>
+	<classpathentry kind="lib" path="/Users/louis/Workspaces/MyEclipse 2016 CI/AirportMap/lib/unfolding.0.9.7-uscd.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
